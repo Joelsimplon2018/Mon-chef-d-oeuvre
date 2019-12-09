@@ -1,0 +1,57 @@
+<div class="prest_holder">
+    <section class="top">
+     
+        <div id="container">
+            <div ng2-carouselamos class="slides-wrapper"  
+            [items]="items"
+            [width]="900"
+            [$prev]="prev"
+            [$next]="next"
+            [$item]="item">
+               
+            <ng-template #prev>
+                <img src="../../../assets/image/arrow-left.png" id="left">
+            </ng-template>
+            <ng-template #next>
+                    <img src="../../../assets/image/arrow-right.png" id="right">
+            </ng-template>
+            <ng-template #item let-item let-i="index">
+                   <div class="items">
+                       <img src="{{item.name}}">
+
+                   </div>
+            </ng-template>
+           </div>  
+        </div>
+    </section>
+    <h2 class="sec_title">Les meilleurs photographes a votre disposition </h2>
+    <section class="prest">
+        <div class="prest_ind" *ngFor="let p of prestataire" routerLink="/photographe-detail/{{p.id}}">
+           
+            <!-- <p>  <img [attr.src]="p.photo " width="1" height="1" > </p>  -->
+           
+            <img src="../../../assets/image/imgProfile/{{p.image}}" class="image_profile">
+           
+            
+            <h3 class="presta_titre">{{p.titre}}</h3>
+           
+            <p class="presta_nom">{{p.nom}} {{p.prenom}}</p>
+        
+            <button class="presta_tarif">{{p.tarif}}/jours</button>
+            <div class="presta_ville">
+                <img class="city_loca_icon" src="../../../assets/image/location-icon-map.png" >
+                <div class="city_position">
+                        {{p.ville}}
+                </div>
+            </div>
+           
+        </div>
+
+        
+    </section>
+   
+
+   
+</div>
+
+  

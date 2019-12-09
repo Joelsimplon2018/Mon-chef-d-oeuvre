@@ -1,0 +1,44 @@
+
+.main_header{
+    background:black;
+    height: 70px;
+    width: 100%;
+    margin: auto;
+}
+h1{
+    font-size: 18px;
+}
+ul{
+    list-style: none;
+    float: right;   
+}
+ nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    margin-right: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;    
+}
+
+.logo{
+    color: #ff5e14;
+    position: relative;
+    top:14px;
+    right: -18px;
+   font-size: 200%;
+   margin: auto;
+   margin-right: 40px;
+   margin-top: 5px;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif;
+
+   
+ 
+
+   
+}
+
+/* bv */

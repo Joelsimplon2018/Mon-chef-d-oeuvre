@@ -1,0 +1,35 @@
+<div *ngIf="prestataires" class="profile_header">
+    <p>Experience:  {{prestataires.experience}} </p>
+  <div  class="profile_main">
+      <div *ngIf="prestataires" class="profil_prestat">
+          <p> {{prestataires.nom}} {{prestataires.prenom}} </p>
+          <p> {{prestataires.titre}} </p>
+          <p> {{prestataires.email}} </p>
+          <p> {{prestataires.ville}} </p>
+          <p> {{prestataires.tarif}} </p>
+          <p> Competence : {{prestataires.competence}} </p>
+          
+          <p> Telephone: {{prestataires.telephone}} </p>
+   
+        </div>
+
+        <div *ngFor="let p of prestataire; index as id" >
+            <button  class="misson_prop" titre="p.prenom " [routerLink]="['/photographe-detail', id]" >Proposer une mission</button>
+        </div  >
+        
+  </div>
+  <div class="core_prestat">
+  
+  </div>
+
+  <div class="core_prestat1">
+  
+    </div>
+    <div class="core_prestat2">
+  
+    </div>
+</div>
+
+
+
+
