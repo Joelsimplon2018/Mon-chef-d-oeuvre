@@ -16,20 +16,20 @@ NPM est un package manager qui permet l’installation d’énormément d’outi
 
     - npm install -g npm@latest
 
-   ### ANGULAR/CLI
+    ### ANGULAR/CLI
 
-   -  npm install -g @angular/cli
+    -  npm install -g @angular/cli
 
   ## Créez votre premier projet
 
 Pour créer un nouveau projet Angular, naviguez vers le dossier souhaité depuis une ligne de commande et saisissez la commande suivante :
 
-  - ng new mon-premier-projet
+    - ng new mon-premier-projet
 
 Ensuite, naviguez dans le dossier du projet et lancez le serveur de développement :
 
-  - cd mon-premier-projet
-  - ng serve --open
+    - cd mon-premier-projet
+    - ng serve --open
 
 ## Development server
 
