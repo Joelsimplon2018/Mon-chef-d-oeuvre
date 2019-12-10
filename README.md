@@ -26,6 +26,10 @@ NPM is a package manager that allows the installation of a lot of tools and libr
     - cd my-first-projet
     - ng serve --open
 
+ ##  Whatʼs inside
+ 
+ 
+ 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
