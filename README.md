@@ -42,6 +42,7 @@ NPM is a package manager that allows the installation of a lot of tools and libr
     - tsconfig.json
     - tslint.json
   
+  1. /src: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. src is a convention for “source code”.
  
  
 ## Development server
