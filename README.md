@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installez les outils
 
-# NODE.JS
+### NODE.JS
 Téléchargez et installez la dernière version LTS de Node.js ici :
 https://nodejs.org/en/download/
 
