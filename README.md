@@ -4,15 +4,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
-  ## Installez les outils
+  ## Install the tools
 
     ### NODE.JS
-Téléchargez et installez la dernière version LTS de Node.js ici :
+Download and install the latest LTS version of Node.js here :
 https://nodejs.org/en/download/
 
     ### NPM
 
-NPM est un package manager qui permet l’installation d’énormément d’outils et de libraries dont vous aurez besoin pour tout type de développement
+NPM is a package manager that allows the installation of a lot of tools and libraries that you will need for any kind of development
 
     - npm install -g npm@latest
 
@@ -20,15 +20,10 @@ NPM est un package manager qui permet l’installation d’énormément d’outi
 
     -  npm install -g @angular/cli
 
-  ## Créez votre premier projet
+  ## Create your first project
 
-Pour créer un nouveau projet Angular, naviguez vers le dossier souhaité depuis une ligne de commande et saisissez la commande suivante :
-
-    - ng new mon-premier-projet
-
-Ensuite, naviguez dans le dossier du projet et lancez le serveur de développement :
-
-    - cd mon-premier-projet
+    - ng new my-first-projet
+    - cd my-first-projet
     - ng serve --open
 
 ## Development server
