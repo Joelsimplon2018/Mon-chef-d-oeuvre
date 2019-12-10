@@ -1,24 +1,26 @@
 # ProjetFinEcole
 
+ ##Quick st-rt
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
-## Installez les outils
+  ## Installez les outils
 
-### NODE.JS
+    ### NODE.JS
 Téléchargez et installez la dernière version LTS de Node.js ici :
 https://nodejs.org/en/download/
 
-### NPM
+    ### NPM
 
 NPM est un package manager qui permet l’installation d’énormément d’outils et de libraries dont vous aurez besoin pour tout type de développement
 
-  - npm install -g npm@latest
+    - npm install -g npm@latest
 
-### ANGULAR/CLI
+   ### ANGULAR/CLI
 
-  -  npm install -g @angular/cli
+   -  npm install -g @angular/cli
 
-## Créez votre premier projet
+  ## Créez votre premier projet
 
 Pour créer un nouveau projet Angular, naviguez vers le dossier souhaité depuis une ligne de commande et saisissez la commande suivante :
 
