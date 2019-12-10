@@ -8,13 +8,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Téléchargez et installez la dernière version LTS de Node.js ici :
 https://nodejs.org/en/download/
 
-# NPM
+### NPM
 
 NPM est un package manager qui permet l’installation d’énormément d’outils et de libraries dont vous aurez besoin pour tout type de développement
 
   - npm install -g npm@latest
 
-# ANGULAR/CLI
+### ANGULAR/CLI
 
   -  npm install -g @angular/cli
 
