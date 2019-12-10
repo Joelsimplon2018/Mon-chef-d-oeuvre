@@ -28,7 +28,20 @@ NPM is a package manager that allows the installation of a lot of tools and libr
 
  ##  Whatʼs inside
  
-  - Src
+    - e2e
+    - mongo
+    - server
+    - src
+    - .editorconfig
+    - .gitignore
+    - README.md
+    - angular.json
+    - initial
+    - package-lock.json
+    - package.json
+    - tsconfig.json
+    - tslint.json
+  
  
  
 ## Development server
