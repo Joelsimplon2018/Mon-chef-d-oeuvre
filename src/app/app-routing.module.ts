@@ -12,6 +12,8 @@ import{DashboardComponent}from '../app/Components/User/Prestataire/dashboard/das
 import{MissionComponent}from '../app/Components/User/Prestataire/mission/mission.component';
 import{ContactComponent } from '../app/Components/contact/contact.component';
 import{PostCreateComponent }from '../app/Components/Post/post-create/post-create.component';
+import{LoginComponent}from '../app/login/login.component';
+
 
 const routes: Routes = [
   {path:'', component: AccueilleComponent  },
@@ -28,7 +30,8 @@ const routes: Routes = [
   {path:'create-profile', component: CreationProfileComponent,},
  
   {path:'recuperer-mot-depasse', component: MotpssOublierComponent  },
-  {path:'mot-message', component: PostCreateComponent }
+  {path:'mot-message', component: PostCreateComponent },
+  {path:'login', component: LoginComponent }
   
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../../services/auth/auth.service";
+import { AuthService } from "../services/auth/auth.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Command } from "selenium-webdriver";
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -16,11 +16,12 @@ import { browser } from "protractor";
 import { BrowserModule } from "@angular/platform-browser";
 
 @Component({
-  selector: "app-se-connecter",
-  templateUrl: "./se-connecter.component.html",
-  styleUrls: ["./se-connecter.component.css"]
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
-export class SeConnecterComponent implements OnInit {
+
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   successMessage: String = "";
   isLoading = false;
@@ -55,11 +56,11 @@ export class SeConnecterComponent implements OnInit {
     console.log(this.loginForm.value);
 
     if (this.loginForm.valid) {
-      this.AuthService.login(this.loginForm.value).subscribe((data:any) => {
-          let x = JSON.stringify(data);
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("currentUser", JSON.stringify(data.user));
-          this.router.navigate(["/accueille"]);
+      this.AuthService.login(this.loginForm.value).subscribe(
+        data => {
+          console.log(data);
+          localStorage.setItem("token", data.toString());
+          this.router.navigate(["/dash"]);
         },
         error => {}
       );

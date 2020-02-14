@@ -42,6 +42,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import{MatProgressSpinnerModule}from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -74,6 +75,8 @@ import{MatProgressSpinnerModule}from '@angular/material';
     PostListComponent,
    
     MainNavComponent,
+   
+    LoginComponent,
   
   ],
   imports: [
