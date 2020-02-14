@@ -1,0 +1,55 @@
+<div *ngIf="prestataires" class="profile_header"> 
+  <div  class="profile_main">
+      <div *ngIf="prestataires" class="profil_prestat">
+        
+          <mat-card>
+              
+                <p class="nom_prestataire"> {{prestataires.nom}} {{prestataires.prenom}} </p>
+                <p class="titre_prestataire"> {{prestataires.titre}} </p>
+                
+               
+                <span class="ville_prestataire">{{prestataires.ville}} </span>
+                <div class="tarif_prestataire_main">
+                    <span class="tarif_prestataire"> Tarif indicatif  {{prestataires.tarif}} / jour </span>
+                </div>
+              
+                
+                
+                <div *ngFor="let p of prestataire; index as id" >
+                    
+                    <button  class="misson_prop" titre="p.prenom " [routerLink]="['/mission']" >Proposer une mission</button>
+                    
+                </div  >
+          </mat-card>
+
+     
+      
+   
+        </div>
+
+       
+        
+  </div>
+  <div class="core_prestat">
+  
+  </div>
+
+  <div class="core_prestat1">
+    <p> Competence : {{prestataires.competence}} </p>
+    </div>
+    <div class="core_prestat2">
+       
+  
+    </div>
+    <div>
+        <img src="  ../../../../assets/image/imgProfile/{{prestataires.image}}" class="image_profile">
+    </div>
+</div>
+
+
+
+
+
+
+
+

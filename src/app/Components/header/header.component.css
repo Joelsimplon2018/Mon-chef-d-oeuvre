@@ -1,9 +1,10 @@
 
 .main_header{
-    background:black;
+ 
     height: 70px;
     width: 100%;
     margin: auto;
+    margin-top: -15px;
 }
 h1{
     font-size: 18px;
@@ -20,7 +21,8 @@ nav ul li a{
     margin-right: 40px;
     font-size: 20px;
     text-decoration: none;
-    color: white;    
+    color: white;  
+    background: black;  
 }
 
 .logo{
@@ -34,6 +36,7 @@ nav ul li a{
    margin-top: 5px;
    font-weight: bold;
    font-family: Arial, Helvetica, sans-serif;
+   background-color: black;
 
    
  

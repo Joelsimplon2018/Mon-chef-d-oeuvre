@@ -31,8 +31,7 @@ function getPrestataire(req, res, next){
     })
 }
 
-
-router.delete("/:id",deletePrestataire );
+router.delete("/:id", deletePrestataire );
 
 function deletePrestataire(req, res, next){
     PrestataireModel.deletePrestataire(req.params).then(function(Prestataire){

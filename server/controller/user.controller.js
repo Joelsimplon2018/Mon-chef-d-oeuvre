@@ -2,22 +2,16 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { check, validationResult } = require("express-validator");
 const config = require("../config/config.json");
 const UserModel = require("../models/user.model");
 
-// router.post("/login", getUserByMail);
 
-router.post("/", authenticate);
+router.post("/authenticate", authenticate);
 function authenticate(req, res, next) {
-  //console.log("passwords req first " ,req.body.password);
+    console.log("controller ", req.body);
+
   UserModel.authenticate(req.body).then(
     (user, error) => 
-        // if (user) {
-        //     console.log('user in db password', user.password);
-        //     console.log('req.body.password', req.body.password);
-        // }
-    // }
       error
         ? res
             .status(400)
@@ -30,6 +24,7 @@ function authenticate(req, res, next) {
         : bcrypt.compare(req.body.password, user.password)
             .then(function(match) {
               if (!match) return res.status(401).send("login failed");
+              console.log('user before jwt encode : ', user);
               const token = jwt.sign(
                 JSON.parse(JSON.stringify(user)),
                 config.secret
@@ -37,8 +32,6 @@ function authenticate(req, res, next) {
               res.status(200).send({ success: true, token });
             })
             .catch(error => next(error))
-    // console.log("passwords req " ,req.body.password);
-    // console.log("passwords res " , user.password)
   );
 }
 
@@ -63,8 +56,6 @@ function updateUserPassword(req, res, next) {
       .then(function(user) {
         if (user) {
           router.get("/" + req.body.idUser, getUser);
-          // const token = jwt.sign(JSON.parse(JSON.stringify(user)), config.secret);
-          // res.status(200).send({success : true, token});
           console.log("user update password controller ", user);
         } else res.status(400).json({ message: `Update password Failed` });
       })

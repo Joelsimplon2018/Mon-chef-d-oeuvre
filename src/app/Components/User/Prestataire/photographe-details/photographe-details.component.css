@@ -1,0 +1,131 @@
+.profile_header{
+    border: 1px solid black;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color:#393F4D;
+    height: 300px;
+    position: relative;
+}
+
+/* .profile_main{
+   
+    position: absolute;
+    margin-top: 20px;
+  
+  
+    margin-bottom: 70px;
+    margin-right: 60px;
+    margin-left: 50px;
+    background-color:red;
+    
+} */
+
+.core_prestat{
+    background: rgb(226, 220, 220);
+  
+    top: 380px;
+    left: -5px;
+    width: 350px;
+
+    position: absolute;
+    height: 600px;
+
+    
+
+}
+
+
+.core_prestat1{
+    background:#343a5e;
+    border: 1px solid black;
+    top: 380px;
+    left: 414px;
+   
+    width: 670px;
+
+    position: absolute;
+    height: 300px;
+    color: white;
+
+    
+
+}
+
+
+.misson_prop{
+    height:50px;
+    width: 199px;
+    background-color: red;
+    left: 490px;
+    position: absolute;
+    top: 50px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 15px;
+}
+mat-card{
+    margin: 20px;
+    position: absolute;
+    margin-top: 50px;
+  
+    width: 850px;
+    height: 249px;;
+    margin-bottom: 90px;
+    margin-right: 60px;
+    margin-left: 220px;
+}
+
+
+.image_profile{
+    min-height: 10px;
+    min-width: 20px;
+    width: 221px;
+    height: 249px;
+    margin: 1px;
+    margin-top: 50px;
+
+}
+
+.nom_prestataire{
+    color: #484848;
+    font-size: 42px;
+    font-weight:600;
+    
+}
+
+.titre_prestataire{
+    color: #484848;
+    margin-bottom: .5em;
+    font-size: 16px;
+    word-break: break-word;
+    font-family:'Roboto';
+}
+.ville_prestataire{
+    color: #484848;
+    font-size: 18px;
+}
+
+.tarif_prestataire{
+    color: white;
+    font-size: 18px;
+    float: right;
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
+
+.tarif_prestataire_main{
+    width: 133px;
+    height: 74px;
+    background-color: #465192;
+    border-color: #465192;
+    margin-top: 14px;
+    border-radius: 5px;
+    align-items: center;
+    z-index: 1;
+    
+}

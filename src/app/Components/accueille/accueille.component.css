@@ -1,3 +1,8 @@
+
+img {
+    width: 900px;
+}
+
 .prest_holder {
     width: 100%;
     max-width: 1440px;
@@ -20,14 +25,33 @@
     text-align: center;
     height: 50px;
     line-height: 50px;
-    background: black;
+    background:#3f51b5;
     color: white;
+    border-radius: 2px;
+    font-family: 'Roboto';
+    font-weight:300;
+  font-size:32px;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
 }
+
+
+.sec_title2 {
+    width: 1100px;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    border-bottom: 2px solid #817974;
+}
+
 .prest {
-    border: 1px solid red;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: #eee;
 }
 .prest_ind {
     height: 350px;
@@ -36,7 +60,7 @@
     border-radius: 5px;
     transition: .5s;
     margin-top: 20px;
-    background: rgb(240, 236, 236);
+    background: #fff;
     
 }
 .prest_ind img:not(.city_loca_icon){
@@ -68,6 +92,7 @@
 #container{
 width: 100%;
 margin-top: 20px;
+
 
 
 
@@ -152,6 +177,17 @@ right: -31px;
     min-width: 50px;
 
 }
+.image_carou{
+    width: 200px;
+    height: 300px;
+    margin-top: 120px;
+}
+
+.main_carou{
+    margin-top: 20px;
+    width: 1100px;
+    height: 250px;
+}
 /* #step1{
 background: url('')
 }
@@ -167,6 +203,76 @@ PLACE GENERALE */
 h4 {
 font-size: 24px;
 color: #444;
+}
+
+
+
+
+#tème_partie button {
+    height: 40px;
+    width: 40px;
+    background: #f55b05;
+    position: relative;
+    left: 48%;
+    border: none;
+    top: -20px;
+}
+div.foot_nav {
+    height: 55px;
+    width: 975px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+div.foot_nav ul {
+    list-style: none;
+    display: block;
+    
+}
+div.foot_nav ul li {
+    display: inline-block;
+    color: #817974;
+    margin: 8px;
+    font-size: 15px;
+}
+div.foot_nav ul li.foot_logo {
+    clear: both;
+    position: relative;
+    top: 30px;
+}
+div.social {
+    margin: 0 auto;
+    color: #817974;
+    margin-top: 80px;
+    font-size: 25px;
+    text-align: center;
+}  
+div.social i {
+    margin: 10px;
+    border: 2px solid #817974;
+    border-radius: 50%;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+}
+div.social::before {
+    width: 350px;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    border-bottom: 2px solid #817974;
+}  
+div.social::after {
+    width: 350px;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    border-bottom: 2px solid #817974;
+} 
+#tème_partie p {
+    color: black;
+    text-align: center;
+    margin-top: 50px;
 }
 
 /* p{

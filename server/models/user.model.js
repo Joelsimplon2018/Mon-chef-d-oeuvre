@@ -1,21 +1,17 @@
 const database = require("../database");
-const bcrypt = require("bcrypt");
 
-// const table = "users"
-
-async function authenticate({ nom, email, password }) {
-  console.log(nom, email, password)
-  var sql = `SELECT * FROM users WHERE nom = '${nom}' AND email ='${email}'`;
+async function authenticate({ email }) {
+  console.log('service : ', email);
+  var sql = `SELECT * FROM users WHERE email = "${email}"`;
   return new Promise((resolve, reject) => {
     database.query(sql, (err, results) => {
       if (err) {
         reject(err);
+        console.log(err);
       } else {
+        console.log(results);
         let user = results[0];
-        // user.token = jwt.sign({user: username}, "chut");
-        // {user: username} sera "crypté" => le decrypter dans http://jwt.io
-        // 'chut' est defini dans config.json
-        //console.log("YOUHOU ", user);
+        console.log("model ", user);
         resolve(user, err);
       }
     });
@@ -31,10 +27,8 @@ function getUserByMail(clbk, mail) {
   });
 }
 
-async function register({ nom, email, password }) {
-
-  console.log('User registration : ', nom, email, password);
-  var sql = `insert into users (nom, email, password) VALUES ('${nom}', '${email}', '${password}');`;
+async function register({ nom, email, password, is_admin = 0 }) {
+  var sql = `insert into users (nom, email, password, is_admin) VALUES ('${nom}', '${email}', '${password}', '${is_admin}');`;
 
   var sqlUser = `SELECT * FROM users WHERE nom = '${nom}'`;
 

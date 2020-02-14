@@ -1,0 +1,87 @@
+<mat-card>
+  <form class="example-form">
+     <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Nom">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Prenom">
+          </mat-form-field></td>
+    </tr></table>
+
+
+<div class="Class_mail">
+ <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" [formControl]="emailFormControl">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+    </mat-form-field>
+</div>
+   
+         
+
+    <mat-form-field>
+              <input matInput placeholder="Votre mot de Passe" [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+    </mat-form-field>
+    <h3>Ville</h3>
+    <p>En indiquant votre localisation principale, vous multipliez vos chances d'être contacté par des entreprises autour de vous !</p>
+        <mat-form-field class="example-full-width">
+          
+              <span matPrefix> &nbsp;</span>
+              <input type="ville" matInput placeholder="Ex: Paris">
+        </mat-form-field>
+
+            
+        <h3>Experience</h3>
+        <p class="param_experience">Ces 3 niveaux d'expérience sont utilisés à titre indicatif et correspondent habituellement aux niveaux junior (0-2 ans), intermédiaire (2-5 ans) et senior (5 ans 7 et +) </p>
+
+    <mat-form-field>
+          <mat-label>Votre niveau d'experience</mat-label>
+          <mat-select [(value)]="selected">
+          <mat-option value="option1">0-2ans</mat-option>
+          <mat-option value="option2">2-5ans</mat-option>
+          <mat-option value="option3">5-7ans</mat-option>
+          </mat-select>
+    </mat-form-field>
+    <h3>Compétences</h3>
+       <p>Merci d'indiquer l'ensemble de vos compétences que vous pensez pertinentes et qu'un client pourrait rechercher </p>
+    <mat-form-field class="example-full-width">
+       
+        <span matPrefix> &nbsp;</span>
+        <input type="competence" matInput placeholder="Competence">
+  </mat-form-field>
+
+     <h3>Titre de votre profil</h3>
+  <mat-form-field class="example-full-width">
+       
+      <span matPrefix> &nbsp;</span>
+      <input type="titre" matInput placeholder="Ex: Photographe (Événementiel - Portrait - Corporate)">
+</mat-form-field>
+            
+<h3>Telephone</h3>
+          <mat-form-field class="example-full-width">
+              <span matPrefix> &nbsp;</span>
+              <input type="tel" matInput name="tel" required placeholder="Ex: 0656124567">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+             
+            </mat-form-field>
+        <button
+        mat-raised-button
+        color="accent"
+        type="submit">Enregister</button>
+  </form>
+ </mat-card>
+
+
+
+<!-- <form enctype="multipart/form-data">
+  <input  type="file" (change)="uploadPhotoprofile($event)">
+ <button type="button" (click)="onUpload()">Upload</button>
+</form> -->

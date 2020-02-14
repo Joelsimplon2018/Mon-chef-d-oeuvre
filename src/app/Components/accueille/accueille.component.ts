@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {ActivatedRoute,Router} from '@angular/router';
@@ -13,7 +14,7 @@ import { map } from "rxjs/operators";
 export class AccueilleComponent implements OnInit {
 
    items:Array<any> =[];
-
+   config: any;
   prestataire;
  
   constructor(public http: HttpClient, private ActivatedRoute: ActivatedRoute ) { 
@@ -41,12 +42,21 @@ export class AccueilleComponent implements OnInit {
         name:"../../../assets/image/carousel 1.jpg"
       },
     ] 
+    this.config = {
+      itemsPerPage: 6,
+      currentPage: 1,
+      
+    };
    }
 
   ngOnInit() {
    
 
    
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
 }
