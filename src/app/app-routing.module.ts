@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SeConnecterComponent } from './Components/User/se-connecter/se-connecter.component';
-import {InscriptionComponent } from './Components/User/inscription/inscription.component';
-import{JesuisPhotographeComponent} from './Components/User/Prestataire/page-profile/jesuis-photographe/jesuis-photographe.component';
-import {CreationProfileComponent} from '../app/Components/User/Prestataire/page-profile/creation-profile/creation-profile.component';
+import {SeConnecterComponent } from './Components/se-connecter/se-connecter.component';
+import {InscriptionComponent } from './Components/inscription/inscription.component';
+
+import {CreationProfileComponent} from '../app/Components/Prestataire/creation-profile/creation-profile.component';
 import {AccueilleComponent} from './Components/accueille/accueille.component';
-import {CreationProfileDetailComponent} from './Components/User/Prestataire/page-profile/creation-profile-detail/creation-profile-detail.component';
-import{MotpssOublierComponent} from './Components/User/motpss-oublier/motpss-oublier.component';
-import {PhotographeDetailsComponent} from '../app/Components/User/Prestataire/photographe-details/photographe-details.component';
-import{DashboardComponent}from '../app/Components/User/Prestataire/dashboard/dashboard.component';
-import{MissionComponent}from '../app/Components/User/Prestataire/mission/mission.component';
+import {CreationProfileDetailComponent} from './Components/Prestataire/creation-profile-detail/creation-profile-detail.component';
+
+import {PhotographeDetailsComponent} from '../app/Components/Prestataire/photographe-details/photographe-details.component';
+import{DashboardComponent}from '../app/Components/Prestataire/dashboard/dashboard.component';
+import{MissionComponent}from '../app/Components/mission/mission.component';
 import{ContactComponent } from '../app/Components/contact/contact.component';
-import{PostCreateComponent }from '../app/Components/Post/post-create/post-create.component';
-import{LoginComponent}from '../app/login/login.component';
+
+
 
 
 const routes: Routes = [
@@ -29,9 +29,7 @@ const routes: Routes = [
   {path:'mission/:id', component: CreationProfileComponent },
   {path:'create-profile', component: CreationProfileComponent,},
  
-  {path:'recuperer-mot-depasse', component: MotpssOublierComponent  },
-  {path:'mot-message', component: PostCreateComponent },
-  {path:'login', component: LoginComponent }
+ 
   
 ];
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import{User}from '../../models/user';
+
 import { Router } from "@angular/router";
 
 import { Subject } from "rxjs";
@@ -28,10 +28,6 @@ export class AuthService {
     // this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     // this.currentUser = this.currentUserSubject.asObservable();
   }
-
-  public get currentUserValue(): User {
-    return this.currentUserSubject.value;
-}
 
 
 
