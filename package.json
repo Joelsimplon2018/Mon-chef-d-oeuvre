@@ -34,7 +34,8 @@
     "ngx-pagination": "^5.0.0",
     "postinstall": "^0.7.0",
     "rxjs": "^6.5.4",
-    "tslib": "^1.9.0",
+    "tslib": "^1.10.0",
+    "zone": "^0.3.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

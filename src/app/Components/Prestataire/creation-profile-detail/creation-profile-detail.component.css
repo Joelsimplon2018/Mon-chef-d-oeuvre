@@ -1,33 +1,56 @@
-.example-form {
-    min-width: 150px;
- 
-    width: 100%;
-    margin: auto;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  td {
-    padding-right: 8px;
-  }
-  :host {
-    display: block;
-    margin-top: 2rem;
-  }
+.formcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
 
-  p{
-  
-      font-size: 14px;
-  }
-  button{
-      width: 150px;
-      left: 100px;
-  }
+.formbody{
+  display: flex;
+  width: 900px;
+  min-height: 180px;
+  background-color: white;
+  box-shadow:0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 25px;
+}
 
-  .Class_mail{
-    
-  }
+
+.header{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;      
+}
+
+div > span {
+  font-size: 0.75rem;
+  color: firebrick;
+}
+
+.MessageRegister{
+  text-align: justify; 
+  color:darkgreen ;
+  padding-top: 10px;
+  border-radius: 8px;
+  background: #e6dddd;
+  margin: 24px;
+  font-size: 16px;
+}
+
+.detail_presta1{
+
+
 
   
+}
+
+.experienc_class{
+  background-color: rgb(243, 239, 239);
+  border-radius: 3px;
+}
+
+form{
+  
+  margin-left: 250px;
+}

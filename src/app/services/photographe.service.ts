@@ -1,21 +1,47 @@
 import { Injectable } from '@angular/core';
 
-
+import { BehaviorSubject } from 'rxjs';
 import {Observable} from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,HttpHeaders } from '@angular/common/http';
+
+
+import { Router } from "@angular/router";
+
+import { Subject } from "rxjs";
+
+
+import * as jwtDecode from 'jwt-decode';
+
+let headers = new HttpHeaders({
+  'Content-Type': 'application/json'
+});
+let options = {
+  headers: headers
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhotographeService {
 
+
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
   private uploadUrl = "http://localhost:3306/upload/";
 
-thumbnailFetchUrl : string = "https://south/generateThumbnail?width=100&height=100";
 
 
-  constructor(private http:  HttpClient) { 
+  constructor(private http:  HttpClient,private router: Router) { 
       
+  }
+
+
+
+
+  submitRegiste(body:any){
+    return this.http.post('http://localhost:3306/prestataire/', body,{
+      observe:'body'
+    });
   }
 
   uploadPhotoprofile(prestataire){
@@ -23,5 +49,12 @@ thumbnailFetchUrl : string = "https://south/generateThumbnail?width=100&height=1
     return this.http.post<any>(this.uploadUrl, prestataire)
   }
 
+
+  addAuthorizationHeader(token) {
+    const authorizationHeader = new Headers({
+      'Authorization': 'Bearer ' + token
+    });
+  
+  }
 
 }

@@ -21,6 +21,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PhotographeDetailsComponent } from '../app/Components/Prestataire/photographe-details/photographe-details.component';
 
+
 import { MissionComponent } from '../app/Components/mission/mission.component';
 
 import { CreationProfileDetailComponent } from '../app/Components/Prestataire/creation-profile-detail/creation-profile-detail.component';
@@ -31,7 +32,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ContactComponent } from '../app/Components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{CreationProfileComponent}from '../app/Components/Prestataire/creation-profile/creation-profile.component'
-import{MatInputModule, MatCardModule,MatButtonModule,MatToolbarModule,MatFormFieldModule, MatExpansionModule}from '@angular/material';
+import{MatInputModule, MatCardModule,MatToolbarModule,MatFormFieldModule, MatExpansionModule, MatButtonModule,
+  MatCheckboxModule,
+  
+  
+  MatDatepickerModule,
+  MatNativeDateModule}from '@angular/material';
 
 
 import { MainNavComponent } from './Components/main-nav/main-nav.component';
@@ -86,7 +92,7 @@ import{MatProgressSpinnerModule}from '@angular/material';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2CarouselamosModule,
-    MatInputModule,
+   
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
@@ -101,7 +107,11 @@ import{MatProgressSpinnerModule}from '@angular/material';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     MatProgressSpinnerModule,
-   
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatListModule 
     
   ],
