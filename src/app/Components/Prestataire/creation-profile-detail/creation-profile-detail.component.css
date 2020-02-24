@@ -52,5 +52,41 @@ div > span {
 
 form{
   
-  margin-left: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #EEE;
+  padding: 20px 30px 20px 30px;
+  font: 12px Georgia, "Times New "
+}
+
+
+form input[type="text"], form input[type="email"]{
+  border: 1px solid #DADADA;
+  color: #888;
+  height: 24px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  width: 70%;
+  font: normal 12px/12px Georgia, "Times New Roman", Times, serif;
+}
+
+legend{
+  font-weight: bold;
+}
+
+textarea{
+  width: 80%;
+  height: 100px;
+}
+input{
+  width: 150px;
+}
+input[type="radio"], input[type="checkbox"]{
+  width: auto;
+}
+input[type="submit"]{
+  width: 100px;
 }

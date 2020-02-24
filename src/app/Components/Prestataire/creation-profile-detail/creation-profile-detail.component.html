@@ -34,17 +34,18 @@
           <input type="file" formControlName="image">
       </label><br><br><br>
 
-      <label >Votre Experience : 
+      <label >
+          <legend>Votre experience</legend>
           <input type="radio"  value="0-2ans" formControlName="experience" name="experience">0-2ans
           <input type="radio"  value="2-5ans"  formControlName="experience" name="experience">2-5ans
           <input type="radio" value="5-7ans"  formControlName="experience" name="experience">5-7ans
       </label><br><br>
       
-     
+   
 
       <label>
-          Competence:
-          <textarea cols="50" rows="5" formControlName="competence"></textarea>
+          <legend>Votre competence</legend>
+          <textarea cols="100" rows="5" formControlName="competence"></textarea>
       </label><br>
       <legend></legend><br>
       <label>
@@ -65,7 +66,7 @@
           <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de telephone</span>
       </label><br><br>
 
-    <button (click)="RegisterNewPresta()" >Submit</button>
+    <button (click)="RegisterNewPresta()" >Envoyer</button>
     <div class="MessageRegister">                
         {{successMessage}}
     </div>

@@ -18,4 +18,9 @@ export class CreationProfileComponent implements OnInit {
     this.router.navigate(['/profile-detail'])
   }
 
+
+  GotologinPrestataire(){
+    this.router.navigate(['/login-prestataire'])
+  }
+
 }

@@ -1,15 +1,74 @@
-<mat-card class="example-card" style="margin: 3em; background-color: gainsboro">
-  <mat-card-header>
-    <h2>Upload de fichier</h2>
-  </mat-card-header>
-  <mat-card-content>
-    <form [formGroup]="uploadForm" >
-      <input type="file" id="userFile" (change)="onSelectFile($event)" #fileInput style="display: none"> (1)
-      <mat-form-field >
-        <input matInput formControlName="filename" placeholder="Fichier" readonly> (2)
-      </mat-form-field>
-      <button mat-button (click)="selectFile()">Selectionner</button> (3)
-    </form>
-    <button mat-button (click)="sendFile()" >Envoyer</button>
-  </mat-card-content>
-</mat-card>
+<form [formGroup]="myForm" >
+  
+    <label for="nom">
+      Nom:
+      <input type="text" formControlName="nom" placeholder="Veuillez saisir votre nom" id="nom" required>
+      <span *ngIf="isValid('nom')">Veuillez saisir votre nom</span>
+    </label><br><br>
+  
+    <label>
+      Prenom:
+      <input type="text" formControlName="prenom" required>
+      <span *ngIf="isValid('prenom')">Veuillez saisir votre prenom</span>
+    </label><br><br>
+    <label>
+        Email:
+        <input type="text" formControlName="email" required>
+        <span *ngIf="isValid('email')">Veuillez saisir votre email</span>
+      </label><br><br>
+
+      <label>
+          Mot de passe:
+          <input type="password" formControlName="password" required>
+          <span *ngIf="isValid('password')">Veuillez saisir votre mot de passe</span>
+      </label><br>
+
+      <label>
+          Ville:
+          <input type="text" formControlName="ville" required>
+          <span *ngIf="isValid('ville')">Veuillez saisir votre ville</span>
+      </label><br>
+
+      <label>
+          Photo:
+          <input type="file" formControlName="image">
+      </label><br><br><br>
+
+      <label >
+          <legend>Votre experience</legend>
+          <input type="radio"  value="0-2ans" formControlName="experience" name="experience">0-2ans
+          <input type="radio"  value="2-5ans"  formControlName="experience" name="experience">2-5ans
+          <input type="radio" value="5-7ans"  formControlName="experience" name="experience">5-7ans
+      </label><br><br>
+      
+   
+
+      <label>
+          <legend>Votre competence</legend>
+          <textarea cols="100" rows="5" formControlName="competence"></textarea>
+      </label><br>
+      <legend></legend><br>
+      <label>
+          Titre:
+          <input type="text" formControlName="titre">
+          <span *ngIf="isValid('titre')">Veuillez saisir votre titre</span>
+      </label><br>
+
+      <label>
+          Tarif:
+          <input type="text" formControlName="tarif">
+          <span *ngIf="isValid('tarif')">Veuillez saisir votre prix</span>
+      </label><br>
+
+      <label>
+          Telephone:
+          <input type="phone" formControlName="telephone">
+          <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de telephone</span>
+      </label><br><br>
+
+    <button (click)="RegisterNewPresta()" >Envoyer</button>
+    <div class="MessageRegister">                
+        {{successMessage}}
+    </div>
+  </form>
+

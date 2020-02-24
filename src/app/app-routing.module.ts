@@ -11,6 +11,7 @@ import {PhotographeDetailsComponent} from '../app/Components/Prestataire/photogr
 import{DashboardComponent}from '../app/Components/Prestataire/dashboard/dashboard.component';
 import{MissionComponent}from '../app/Components/mission/mission.component';
 import{ContactComponent } from '../app/Components/contact/contact.component';
+import {LoginPrestataireComponent} from '../app/Components/Prestataire/login-prestataire/login-prestataire.component'
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'mission', component: MissionComponent },
   {path:'mission/:id', component: CreationProfileComponent },
   {path:'create-profile', component: CreationProfileComponent,},
+  {path:'login-prestataire', component: LoginPrestataireComponent,}
  
  
   
