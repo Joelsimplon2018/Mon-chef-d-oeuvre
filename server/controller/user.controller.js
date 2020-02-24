@@ -35,6 +35,7 @@ function authenticate(req, res, next) {
   );
 }
 
+
 router.patch("/update", updateUser);
 function updateUser(req, res, next) {
   //console.log("req.body ",req.body);

@@ -2,6 +2,56 @@ const database = require("../database");
 
 const table = "prestataire";
 
+
+async function authenticate({ email }) {
+  console.log('service : ', email);
+  var sql = `SELECT * FROM prestataire WHERE email = "${email}"`;
+  return new Promise((resolve, reject) => {
+    database.query(sql, (err, results) => {
+      if (err) {
+        reject(err);
+        console.log(err);
+      } else {
+        console.log(results);
+        let prestataire = results[0];
+        console.log("model ", prestataire);
+        resolve(prestataire, err);
+      }
+    });
+  });
+}
+
+function getPrestataireByMail(clbk, mail) {
+  const sql = `SELECT * FROM ${table} WHERE mail = ?`;
+
+  database.query(sql, mail, (err, user) => {
+    if (err) return clbk(err, null);
+    return clbk(null, ...prestataire);
+  });
+}
+
+async function register({ nom,prenom, email, password, ville, image,experience,competence,titre,tarif,telephone }) {
+  var sql = `insert into prestataire (nom, prenom,email, password, ville,image,experience,competence,titre,tarif,telephone) VALUES ('${nom}','${prenom}',  '${email}', '${password}', '${ville}','${image}','${experience}', '${competence}', '${titre}','${tarif}','${telephone}');`;
+
+  var sqlUser = `SELECT * FROM prestataire WHERE nom = '${nom}'`;
+
+  return new Promise((resolve, reject) => {
+    database.query(sqlUser, (err, results) => {
+      if (!results.length) {
+        database.query(sql, (err, results) => {
+          if (err) reject(err);
+          else {
+            let user = results;
+            //console.log("user created! ", user);
+            resolve(user);
+          }
+        });
+      } else reject("PRESTATAIRE ALREADY EXIST !");
+    });
+  });
+}
+
+
 const createPrestataire = function createPrestataire(clbk, payload) {
     const q = "INSERT INTO prestataire (nom, prenom, email, password, ville, image, experience, competence, titre, tarif, telephone ) VALUES (?, ?, ?, ?,?,?, ?, ?, ?, ?, ?)";
     const data = [payload.nom, payload.prenom, payload.email, payload.password, payload.ville,payload.image, payload.experience, payload.competence, payload.titre, payload.tarif, payload.telephone];
@@ -78,6 +128,9 @@ async function getPrestataire({id}) {
     createPrestataire,
     deletePrestataire,
     editPrestataire,
+    getPrestataireByMail,
+    authenticate,
+    register,
     getPrestataire
     // getPrestaireMissionUser
    
