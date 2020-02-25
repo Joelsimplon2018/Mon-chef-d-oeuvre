@@ -31,7 +31,8 @@
 
       <label>
           Photo:
-          <input type="file" formControlName="image">
+          <input type="file" (change)="onFileseleted($event)" formControlName="image">
+          <button type="button" (click)="onUpload()">Upload</button>
       </label><br><br><br>
 
       <label >

@@ -13,7 +13,8 @@ import {FormControl, Validators,FormGroupDirective,NgForm,FormGroup} from '@angu
   styleUrls: ['./creation-profile-detail.component.css']
 })
 export class CreationProfileDetailComponent implements OnInit {
-
+ 
+  fileData: File = null;
   name = new FormControl('');
   myForm: FormGroup;
   successMessage: String = '';
@@ -29,7 +30,8 @@ export class CreationProfileDetailComponent implements OnInit {
   
   constructor( 
     private PhotographeService : PhotographeService,
-    public http: HttpClient, 
+    private http: HttpClient, 
+    private router: Router,
     private ActivatedRoute: ActivatedRoute  ) {
 
 
@@ -39,7 +41,7 @@ export class CreationProfileDetailComponent implements OnInit {
         email: new FormControl(null, Validators.email),
         password: new FormControl(null, Validators.required),
         ville: new FormControl(null, Validators.required),
-        image:new FormControl(null, Validators.required),
+        image:new FormControl(null,Validators.required),
         experience:new FormControl(null, Validators.required),
         competence:new FormControl(null, Validators.required),
         titre:new FormControl(null, Validators.required),
@@ -60,16 +62,20 @@ export class CreationProfileDetailComponent implements OnInit {
           error => this.successMessage = 'Erreur '
          
         );
-      // this.router.navigate(["/connexion"]);
+       this.router.navigate(["/login-prestataire"]);
     }
   }
 
 
 
+  fileProgress(fileInput: any) {
+    this.fileData = <File>fileInput.target.files[0];
+}
+
   ngOnInit() {
   }
 
-  uploadPhotoprofile(event){
+  onFileseleted(event){
    
   this.selectedFile = <File> event.target.files[0];
 
@@ -81,14 +87,24 @@ export class CreationProfileDetailComponent implements OnInit {
   }
 
   
+  // onUpload(){
+  //   const fd = new FormData();
+  //   fd.append('file', this.selectedFile, this.selectedFile.name)
+  //   this.http.post('http://localhost:3306/upload',fd)
+  //   .subscribe(res =>{
+  //     console.log(res);
+  //   })
+  // }
+
   onUpload(){
-    const fd = new FormData();
-    fd.append('image', this.selectedFile, this.selectedFile.name)
-    this.http.post('http://localhost:3306/upload/',fd)
-    .subscribe(res =>{
-      console.log(res);
-    })
-  }
+    const formData = new FormData();
+    formData.append('file', this.fileData);
+    this.http.post('http://localhost:3306/upload', formData)
+      .subscribe(res => {
+        console.log(res);
+        alert('SUCCESS !!');
+      })
+}
 
 
   onSubmit() {

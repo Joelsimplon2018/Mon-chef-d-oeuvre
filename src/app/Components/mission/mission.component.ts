@@ -6,6 +6,11 @@ import { map } from "rxjs/operators";
 import { switchMap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import{PhotographeService}from '../../services/photographe.service';
+import { RouterModule, Routes } from '@angular/router';
+import {FormControl,AbstractControl, FormGroup, Validators,FormGroupDirective,NgForm} from '@angular/forms';
+
+
+
 
 @Component({
   selector: 'app-mission',
@@ -13,35 +18,23 @@ import{PhotographeService}from '../../services/photographe.service';
   styleUrls: ['./mission.component.css']
 })
 export class MissionComponent implements OnInit {
-
+  myForm: FormGroup;
+  successMessage: String = '';
  
   
-  id;
-  config:any;
-  prestataire;
-prestataires={ count: 60, data:[]};
+ 
   constructor( private ActivatedRoute: ActivatedRoute, private router: Router,  private location: Location,public http: HttpClient, private PhotographeService: PhotographeService) {
 
-    http.get('http://localhost:3306/prestataire/')
-    .subscribe(Response =>{
-       console.log(Response);
-       this.prestataire= Response;
-    })
-
-
-    for (var i =0; i< this.prestataires.count; i++){
-      this.prestataires.data.push(
-        {
-         nom:i+1,
-         titre:" prestataires number"+(i+1)
-        }
-      );
-    }
-    this.config={
-      itemsPerPage:5,
-      currentPage:1,
-      totalItems:this.prestataires.count
-    };
+   
+    this.myForm = new FormGroup({
+      titre: new FormControl(null, Validators.required),
+      description: new FormControl(null, Validators.email),
+      date: new FormControl(null, Validators.required),
+      type_prestation: new FormControl(null, Validators.required),
+      
+    });
+   
+   
   }
    
 
@@ -49,5 +42,8 @@ prestataires={ count: 60, data:[]};
   }
 
 
+  isValid(controlName) {
+    return this.myForm.get(controlName).invalid && this.myForm.get(controlName).touched;
+  }
   
 }

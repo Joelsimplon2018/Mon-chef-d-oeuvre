@@ -16,7 +16,8 @@ export class InscriptionComponent implements OnInit {
   myForm: FormGroup;
   successMessage: String = '';
 
-  constructor(private AuthService:
+  constructor(
+    private AuthService:
      AuthService,
     private router:Router,
     private _activatedRoute: ActivatedRoute) { 

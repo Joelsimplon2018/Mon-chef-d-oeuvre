@@ -39,10 +39,17 @@ export class PhotographeService {
 
 
   submitRegiste(body:any){
-    return this.http.post('http://localhost:3306/prestataire/', body,{
+    return this.http.post('http://localhost:3306/prestataire/register', body,{
       observe:'body'
     });
   }
+
+  login(body:any){
+    return this.http.post('http://localhost:3306/prestataire/authenticate', body,{
+      observe:'body'
+    });
+  }
+
 
   uploadPhotoprofile(prestataire){
     console.log(prestataire);

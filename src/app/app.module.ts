@@ -50,6 +50,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import{MatProgressSpinnerModule}from '@angular/material';
 import { LoginPrestataireComponent } from './Components/Prestataire/login-prestataire/login-prestataire.component';
+import { EditProfilComponent } from './Components/Prestataire/edit-profil/edit-profil.component';
 
 
 
@@ -85,6 +86,9 @@ import { LoginPrestataireComponent } from './Components/Prestataire/login-presta
    
    
     LoginPrestataireComponent,
+   
+   
+    EditProfilComponent,
    
     
   

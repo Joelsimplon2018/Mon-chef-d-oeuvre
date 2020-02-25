@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { Command } from "selenium-webdriver";
 import { FormGroup, FormBuilder } from "@angular/forms";
-
+import{PhotographeService}from "../../../services/photographe.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   FormControl,
@@ -22,7 +22,10 @@ export class LoginPrestataireComponent implements OnInit {
   successMessage: String = "";
   isLoading = false;
 
-  constructor() {
+  constructor( private PhotographeService: PhotographeService,
+    private fb: FormBuilder,
+    private router: Router,
+    private _activatedRoute: ActivatedRoute) {
     this.loginForm = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
@@ -32,7 +35,20 @@ export class LoginPrestataireComponent implements OnInit {
   ngOnInit() {
   }
 
+  login() {
+    console.log(this.loginForm.value);
 
+    if (this.loginForm.valid) {
+      this.PhotographeService.login(this.loginForm.value).subscribe((data:any) => {
+          let x = JSON.stringify(data);
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("currentUser", JSON.stringify(data.user));
+          this.router.navigate(["/dashboard"]);
+        },
+        error => {}
+      );
+    }
+  }
 
   isValid(controlName) {
     return (
