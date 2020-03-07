@@ -43,7 +43,7 @@ export class LoginPrestataireComponent implements OnInit {
           let x = JSON.stringify(data);
           localStorage.setItem("token", data.token);
           localStorage.setItem("currentUser", JSON.stringify(data.user));
-          this.router.navigate(["/dashboard"]);
+          this.router.navigate(["/edit-profil"]);
         },
         error => {}
       );

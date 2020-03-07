@@ -8,7 +8,6 @@ const multer= require("multer");
 const router = express.Router();
 const morgan = require('morgan');
 const mysql = require('mysql');
-
 const cors= require('cors');
 const bcrypt = require("bcrypt");
 const fs = require("fs");
@@ -45,10 +44,7 @@ app.use(express.static(__dirname + '/public', {
 
 const storage = multer.diskStorage({
   destination: "../src/assets/image/imgProfile/",
-  filename: function(req, file, cb){
-    // cb(null,"IMAGE-" + Date.now() + path.extname(file.originalname)); //pour renommer le fichier
-    cb(null, "shootpic-"+path.basename(file.originalname));
-  }
+
 });
 
 const upload = multer({
@@ -69,6 +65,8 @@ app.post('/upload',function(req, res) {
   })
 
 });
+
+
 
 
 require('../server/routes')(app);

@@ -14,6 +14,7 @@ import {
 } from "@angular/forms";
 import { browser } from "protractor";
 import { BrowserModule } from "@angular/platform-browser";
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 
 @Component({
   selector: "app-se-connecter",

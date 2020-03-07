@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 210px;
    
   }
   
@@ -37,4 +37,14 @@
     background: #e6dddd;
     margin: 24px;
     font-size: 16px;
+  }
+
+  input{
+    
+    background-color: rgba(220, 220, 226, 0.836);
+    height: 40px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-justify: initial;
+    
   }

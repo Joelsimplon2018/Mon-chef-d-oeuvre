@@ -33,6 +33,9 @@
           Photo:
           <input type="file" (change)="onFileseleted($event)" formControlName="image">
           <button type="button" (click)="onUpload()">Upload</button>
+          <!-- <div [ngStyle]="{'background-image': selectedFile}"></div> -->
+          <img [src]="selectedFile" height="200" *ngIf="selectedFile">
+
       </label><br><br><br>
 
       <label >

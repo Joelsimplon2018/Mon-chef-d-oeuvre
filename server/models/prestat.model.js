@@ -57,7 +57,7 @@ const createPrestataire = function createPrestataire(clbk, payload) {
     const data = [payload.nom, payload.prenom, payload.email, payload.password, payload.ville,payload.image, payload.experience, payload.competence, payload.titre, payload.tarif, payload.telephone];
   
     database.query(q, data, (err, res, cols) => {
-      // console.log(this.sql); // affiche la dernière requête SQL, pratique pour deboguer
+     
       if (err) return clbk(err, null);
       return clbk(null, res);
     });

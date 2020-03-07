@@ -26,7 +26,7 @@ import { MissionComponent } from '../app/Components/mission/mission.component';
 
 import { CreationProfileDetailComponent } from '../app/Components/Prestataire/creation-profile-detail/creation-profile-detail.component';
 
-import { HeaderComponent } from './Components/header/header.component';
+
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import { ContactComponent } from '../app/Components/contact/contact.component';
@@ -77,7 +77,7 @@ import { EditProfilComponent } from './Components/Prestataire/edit-profil/edit-p
     CreationProfileComponent,
     CreationProfileDetailComponent,
    
-    HeaderComponent,
+ 
    
     ContactComponent,
    

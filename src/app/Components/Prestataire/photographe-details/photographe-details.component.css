@@ -1,12 +1,18 @@
+
 .profile_header{
     border: 1px solid black;
-    margin-top: 0px;
+
     margin-bottom: 100px;
     margin-right: 0px;
     margin-left: 0px;
     background-color:#393F4D;
-    height: 300px;
-    position: relative;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding-top: 240px;
 }
 
 /* .profile_main{
@@ -25,12 +31,13 @@
 .core_prestat{
     background: rgb(226, 220, 220);
   
-    top: 380px;
+    top: 608px;
     left: -5px;
     width: 350px;
 
     position: absolute;
     height: 600px;
+    left: 167px;
 
     
 
@@ -40,8 +47,8 @@
 .core_prestat1{
     background:#343a5e;
     border: 1px solid black;
-    top: 380px;
-    left: 414px;
+    top: 608px;
+    left: 560px;
    
     width: 670px;
 
@@ -70,13 +77,13 @@
 mat-card{
     margin: 20px;
     position: absolute;
-    margin-top: 50px;
+    margin-top: 52px;
   
     width: 850px;
     height: 249px;;
     margin-bottom: 90px;
     margin-right: 60px;
-    margin-left: 220px;
+    margin-left: -327px;
 }
 
 
@@ -87,6 +94,7 @@ mat-card{
     height: 249px;
     margin: 1px;
     margin-top: 50px;
+    margin-left: -550px;
 
 }
 
@@ -129,3 +137,36 @@ mat-card{
     z-index: 1;
     
 }
+
+
+/* body{
+    margin: 0;
+    padding: 0;
+}
+.contenaire{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "section"
+    "nav article"
+    "footer footer";
+}
+
+
+section{
+    background: red;
+    grid-area: section;
+}
+nav{
+    background: black;
+    grid-area: nav;
+}
+article{
+    background: yellow;
+    grid-area: article;
+}
+footer{
+    background: blue;
+    grid-area: footer;
+    color: white;
+} */

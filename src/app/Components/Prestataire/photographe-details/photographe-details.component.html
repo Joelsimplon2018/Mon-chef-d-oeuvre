@@ -1,3 +1,4 @@
+
 <div *ngIf="prestataires" class="profile_header"> 
   <div  class="profile_main">
       <div *ngIf="prestataires" class="profil_prestat">
@@ -16,12 +17,8 @@
                 </div>
                 <span class="">Experience : {{prestataires.experience}} </span>
                 
-                
-                <div *ngFor="let p of prestataire; index as id" >
-                    
-                    <button  class="misson_prop" titre="p.prenom " [routerLink]="['/mission']" >Proposer une mission</button>
-                    
-                </div  >
+                <button  class="misson_prop" titre="p.prenom " [routerLink]="['/mission', prestataires.id + prestataires.nom]" >Proposer une mission</button>
+
           </mat-card>
 
      

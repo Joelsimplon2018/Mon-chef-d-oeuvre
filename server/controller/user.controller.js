@@ -78,6 +78,27 @@ function register(req, res, next) {
   });
 }
 
+const checkUserToken = (req, res, next) => {
+  // check that the user sent a token in the request header
+  if(!req.header('authorization')) {
+    // no header, no need to go further
+    return res.status(401).json({ success: false, message: "Header d'authentification manquant"});
+  }
+
+  const authorizationHeaderParts = req.header('authorization').split(' ');
+  // parts are 'Bearer theToken'
+  let token = authorizationHeaderParts[1];
+  jwt.verify(token, secret, (err, decodedToken) => {
+    if(err) {
+      return res.status(401).json({ success: false, message: "Token non valide"});      
+    } else {
+      console.log('decodedToken ', decodedToken);
+      next();
+    }
+  });
+};
+
+
 router.post("/users", createUser);
 
 function createUser(req, res, next) {

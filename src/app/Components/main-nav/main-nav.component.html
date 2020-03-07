@@ -1,34 +1,23 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async)!.matches">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span class="logo">Jl EntrePrise</span>
-      <span class="spacer"></span>
-      <a  [routerLink]="['/accueille']">Accueil</a>
-      <a [routerLink]="['/create-profile']">Je suis prestataire</a>
-      <a [routerLink]="['/inscription']">M'inscrire</a>
-      <a [routerLink]="['/connexion']">Me connecter</a>
+
+  <div id="navbar">
+
+      <a [routerLink]="['/accueille']" href="#accueille" id="logo">Jl EntrePrise</a>
+
+    <div id="navbar-right">
+        
+        <span class="spacer"></span>
+        <a  [routerLink]="['/accueille'] " href="#maccueil">Accueil</a>
+        <a [routerLink]="['/create-profile']" href="#je suis prestataire">Je suis prestataire</a>
+        <a  [routerLink]="['/inscription']" href="#m'inscrire">M'inscrire</a>
+        <a  [routerLink]="['/connexion']" href="#me connecter">Me connecter</a>
+    </div>
+
+  </div>
+
+  
+
+
+  
      
      
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  

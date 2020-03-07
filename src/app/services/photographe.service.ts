@@ -24,20 +24,13 @@ let options = {
 })
 export class PhotographeService {
 
-
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
   private uploadUrl = "http://localhost:3306/upload/";
 
-
-
   constructor(private http:  HttpClient,private router: Router) { 
       
   }
-
-
-
-
   submitRegiste(body:any){
     return this.http.post('http://localhost:3306/prestataire/register', body,{
       observe:'body'

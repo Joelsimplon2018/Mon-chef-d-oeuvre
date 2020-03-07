@@ -9,15 +9,15 @@
                     
                     <input type="text" formControlName="titre" matInput placeholder="titre" id="user">
                 </mat-form-field>
-                <span *ngIf="isValid('nom')">Veuillez saisir votre le titre </span>
+                <span *ngIf="isValid('titre')">Veuillez saisir votre le titre </span>
             </div>
 
             <div>
                     <h4>Description de la mission</h4>
                 <mat-form-field style="width:100%;">
-                   <textarea formControlName="description" cols="50" rows="5"></textarea>
+                   <textarea formControlName="description" cols="65" rows="5"></textarea>
                 </mat-form-field>                
-                <span *ngIf="isValid('description')">Entered email is invalid</span>
+                <span *ngIf="isValid('description')">Veuillez decrire votre mission</span>
             </div>
 
             <div>
@@ -27,6 +27,22 @@
                     <input type="date" formControlName="date" matInput placeholder="date" id="user">
                 </mat-form-field>
                 <span *ngIf="isValid('date')">Veuillez saisir votre la date </span>
+            </div>
+            <div>
+                    <h4>Adresse</h4>
+                <mat-form-field style="width:100%;">
+                    
+                    <input type="text" formControlName="adresse" matInput placeholder="adresse" id="user">
+                </mat-form-field>
+                <span *ngIf="isValid('adresse')">Veuillez saisir votre adresse </span>
+            </div>
+            <div>
+                    <h4>Téléphone</h4>
+                <mat-form-field style="width:100%;">
+                    
+                    <input type="text" formControlName="telephone" matInput placeholder="telephone" id="user">
+                </mat-form-field>
+                <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de téléphone </span>
             </div>
            
             <div>
@@ -41,7 +57,7 @@
             </div>
            
             <div style="margin-top:20px;">
-                <button  mat-raised-button color="accent" class="form-btn" (click)="register()">Envoyer</button>
+                <button  mat-raised-button color="accent" class="form-btn" (click)="SubmiteMissionFormProp()">Envoyer</button>
             </div>
 
 

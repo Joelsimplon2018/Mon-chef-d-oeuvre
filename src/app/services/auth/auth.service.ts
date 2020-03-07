@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+
 import { map } from 'rxjs/operators';
 
 import { Router } from "@angular/router";
@@ -11,6 +12,7 @@ import * as jwtDecode from 'jwt-decode';
 
 let headers = new HttpHeaders({
   'Content-Type': 'application/json'
+  
 });
 let options = {
   headers: headers
@@ -21,6 +23,8 @@ let options = {
 })
 export class AuthService {
 
+  TOKEN_NAME = 'mission-token';
+  decodedToken = null;
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
@@ -44,16 +48,30 @@ login(body:any){
   });
 }
 
+logOut() {
+  localStorage.removeItem(this.TOKEN_NAME);
+  localStorage.removeItem('token');
+}
+
+
+decodeToken(token) {
+  return jwtDecode(token);
+}
 
 
 
+// addAuthorizationHeader(token) {
+//   const authorizationHeader = new Headers({
+//     'Authorization': 'Bearer ' + token
+//   });
 
+// }
 
 addAuthorizationHeader(token) {
   const authorizationHeader = new Headers({
     'Authorization': 'Bearer ' + token
   });
-
+ 
 }
 
 
