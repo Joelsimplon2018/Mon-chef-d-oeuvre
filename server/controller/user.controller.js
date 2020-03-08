@@ -29,6 +29,7 @@ function authenticate(req, res, next) {
                 JSON.parse(JSON.stringify(user)),
                 config.secret
               );
+              user.isLoggedIn = true;
               res.status(200).send({ success: true, token, user:user });
             })
             .catch(error => next(error))

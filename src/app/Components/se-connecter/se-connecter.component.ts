@@ -22,6 +22,7 @@ import { Token } from '@angular/compiler/src/ml_parser/lexer';
   styleUrls: ["./se-connecter.component.css"]
 })
 export class SeConnecterComponent implements OnInit {
+  
   loginForm: FormGroup;
   successMessage: String = "";
   isLoading = false;
@@ -66,6 +67,8 @@ export class SeConnecterComponent implements OnInit {
       );
     }
   }
+
+ 
 
   isValid(controlName) {
     return (

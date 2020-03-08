@@ -3,17 +3,22 @@
 
       <a [routerLink]="['/accueille']" href="#accueille" id="logo">Jl EntrePrise</a>
 
+      <span *ngIf=userName> welcome {{ userName }}</span>
+
     <div id="navbar-right">
         
         <span class="spacer"></span>
         <a  [routerLink]="['/accueille'] " href="#maccueil">Accueil</a>
         <a [routerLink]="['/create-profile']" href="#je suis prestataire">Je suis prestataire</a>
         <a  [routerLink]="['/inscription']" href="#m'inscrire">M'inscrire</a>
-        <a  [routerLink]="['/connexion']" href="#me connecter">Me connecter</a>
+        <a  [routerLink]="['/connexion']" href="#me connecter" *ngIf="!checkLogIn()">Me connecter</a>
+        <a  [routerLink]="['/connexion']" href="#me connecter"   *ngIf="checkLogIn()" (click)="testClick()">Déconnecter</a>
     </div>
 
   </div>
 
+
+  <!-- *ngIf="_AuthService.userLoggedIn.isLoggedIn" -->
   
 
 

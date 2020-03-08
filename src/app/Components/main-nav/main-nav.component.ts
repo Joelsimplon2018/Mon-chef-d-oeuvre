@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent {
+  userName : string = "";
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -46,4 +47,19 @@ function scrollFunction() {
        this._router.navigate(['/accueille'])
      }
 
+    checkLogIn() {
+      if(this._AuthService.userLoggedIn ==  null) {
+        return false;
+      }
+      else if(this._AuthService.userLoggedIn.user.isLoggedIn === true) {
+        this.userName = this._AuthService.userLoggedIn.user.nom;
+        return true;
+      } 
+      // return true;
+    }
+
+    testClick() {
+      this.userName = "";
+      this._AuthService.userLoggedIn.user.isLoggedIn = false;
+    }
 }

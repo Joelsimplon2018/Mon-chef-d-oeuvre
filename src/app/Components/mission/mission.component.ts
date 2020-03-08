@@ -79,7 +79,7 @@ export class MissionComponent implements OnInit {
         data => (this.successMessage = "Votre proposition de mission  éteé envoyé"),
         error => (this.successMessage = "Erreur ")
       );
-      this.router.navigate(["/login-prestataire"]);
+     
     }
   }
 

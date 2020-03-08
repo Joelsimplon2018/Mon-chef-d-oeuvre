@@ -23,6 +23,7 @@ let options = {
 })
 export class AuthService {
 
+  userLoggedIn = null;
   TOKEN_NAME = 'mission-token';
   decodedToken = null;
   private currentUserSubject: BehaviorSubject<any>;
@@ -43,9 +44,14 @@ submitRegiste(body:any){
 
 
 login(body:any){
-  return this.http.post('http://localhost:3306/users/authenticate', body,{
+  
+  const x = this.http.post('http://localhost:3306/users/authenticate', body,{
     observe:'body'
   });
+  x.subscribe(data => this.userLoggedIn = data);
+  // console.log('xx here ', this.userLoggedIn.user.isLoggedIn);
+  
+  return x;
 }
 
 logOut() {
@@ -55,6 +61,7 @@ logOut() {
 
 
 decodeToken(token) {
+  
   return jwtDecode(token);
 }
 
