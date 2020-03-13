@@ -19,7 +19,7 @@
            
             <div>
                 <mat-form-field style="width:100%;">
-                    <input type="password" formControlName="password" matInput placeholder="Password" id="pass">
+                    <input type="password" formControlName="password" matInput placeholder="Password" minlength="6" maxlength="8" id="pass">
                 </mat-form-field>
                 <span *ngIf="isValid('password')">Password is a mandatory field</span>
             </div>

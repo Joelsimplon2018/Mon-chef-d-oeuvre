@@ -1,49 +1,53 @@
-<form [formGroup]="myForm" >
+<form [formGroup]="myForm" class="formcontainer">
+  <div class="first_part">
+        <label for="nom">
+                Nom:
+                <input type="text" formControlName="nom" placeholder="Veuillez saisir votre nom" id="nom" required>
+                <span *ngIf="isValid('nom')">Veuillez saisir votre nom</span>
+              </label><br><br>
+            
+              <label>
+                Prenom:
+                <input type="text" formControlName="prenom" required>
+                <span *ngIf="isValid('prenom')">Veuillez saisir votre prenom</span>
+              </label><br><br>
+              <label>
+                    Email:
+                    <input type="text" formControlName="email" required>
+                    <span *ngIf="isValid('email')">Veuillez saisir votre email</span>
+                </label><br><br>
+                <label>
+                        Mot de passe:
+                        <input type="password" formControlName="password" required minlength="6" maxlength="8">
+                        <span *ngIf="isValid('password')">Veuillez saisir votre mot de passe</span>
+                 </label>
+                 <br>
+      <label>
+            Ville:
+            <input type="text" formControlName="ville" required>
+            <span *ngIf="isValid('ville')">Veuillez saisir votre ville</span>
+        </label><br>
+  </div><br>
   
-    <label for="nom">
-      Nom:
-      <input type="text" formControlName="nom" placeholder="Veuillez saisir votre nom" id="nom" required>
-      <span *ngIf="isValid('nom')">Veuillez saisir votre nom</span>
-    </label><br><br>
-  
-    <label>
-      Prenom:
-      <input type="text" formControlName="prenom" required>
-      <span *ngIf="isValid('prenom')">Veuillez saisir votre prenom</span>
-    </label><br><br>
-    <label>
-        Email:
-        <input type="text" formControlName="email" required>
-        <span *ngIf="isValid('email')">Veuillez saisir votre email</span>
-      </label><br><br>
+<div class="second_class">
 
-      <label>
-          Mot de passe:
-          <input type="password" formControlName="password" required>
-          <span *ngIf="isValid('password')">Veuillez saisir votre mot de passe</span>
-      </label><br>
-
-      <label>
-          Ville:
-          <input type="text" formControlName="ville" required>
-          <span *ngIf="isValid('ville')">Veuillez saisir votre ville</span>
-      </label><br>
-
-      <label>
-          Photo:
-          <input type="file" (change)="onFileseleted($event)" formControlName="image">
-          <button type="button" (click)="onUpload()">Upload</button>
-          <!-- <div [ngStyle]="{'background-image': selectedFile}"></div> -->
-          <img [src]="selectedFile" height="200" *ngIf="selectedFile">
-
-      </label><br><br><br>
-
-      <label >
-          <legend>Votre experience</legend>
-          <input type="radio"  value="0-2ans" formControlName="experience" name="experience">0-2ans
-          <input type="radio"  value="2-5ans"  formControlName="experience" name="experience">2-5ans
-          <input type="radio" value="5-7ans"  formControlName="experience" name="experience">5-7ans
-      </label><br><br>
+        <label>
+                Photo:
+                <input type="file" (change)="onFileseleted($event)" formControlName="image">
+                <button type="button" (click)="onUpload()">Upload</button>
+                <!-- <div [ngStyle]="{'background-image': selectedFile}"></div> -->
+                <img [src]="selectedFile" height="200" *ngIf="selectedFile">
+      
+            </label><br><br><br>
+      
+            <label >
+                <legend>Votre experience</legend>
+                <input type="radio"  value="0-2ans" formControlName="experience" name="experience">0-2ans
+                <input type="radio"  value="2-5ans"  formControlName="experience" name="experience">2-5ans
+                <input type="radio" value="5-7ans"  formControlName="experience" name="experience">5-7ans
+            </label><br><br>
+</div>
+     
       
    
 
@@ -51,24 +55,28 @@
           <legend>Votre competence</legend>
           <textarea cols="100" rows="5" formControlName="competence"></textarea>
       </label><br>
-      <legend></legend><br>
-      <label>
-          Titre:
-          <input type="text" formControlName="titre">
-          <span *ngIf="isValid('titre')">Veuillez saisir votre titre</span>
-      </label><br>
 
-      <label>
-          Tarif:
-          <input type="text" formControlName="tarif">
-          <span *ngIf="isValid('tarif')">Veuillez saisir votre prix</span>
-      </label><br>
-
-      <label>
-          Telephone:
-          <input type="phone" formControlName="telephone">
-          <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de telephone</span>
-      </label><br><br>
+      <div class="endClass">
+            <label>
+                    Titre:
+                    <input type="text" formControlName="titre">
+                    <span *ngIf="isValid('titre')">Veuillez saisir votre titre</span>
+                </label><br>
+          
+                <label>
+                    Tarif:
+                    <input type="text" formControlName="tarif">
+                    <span *ngIf="isValid('tarif')">Veuillez saisir votre prix</span>
+                </label><br>
+          
+                <label>
+                    Telephone:
+                    <input type="phone" formControlName="telephone">
+                    <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de telephone</span>
+                </label><br><br>
+      </div>
+    
+      
 
     <button (click)="RegisterNewPresta()" >Envoyer</button>
     <div class="MessageRegister">                

@@ -10,7 +10,7 @@ const fs = require("fs");
 const MissionModel= require('../models/mission.model');
 
 
-router.post('/', createMission);
+router.post("/create-mission", createMission);
 function createMission(req, res, next){
     MissionModel.createMission(function(error, Mission){
         if(Mission) res.send(Mission);

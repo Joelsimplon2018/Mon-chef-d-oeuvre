@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 220px;
+  padding: 210px 30px 20px 30px;
+  
 }
 
 .formbody{
@@ -55,7 +56,7 @@ form{
   margin-right: auto;
   margin-left: auto;
   background: #EEE;
-  padding: 20px 30px 20px 30px;
+  padding: 210px 30px 20px 30px;
   font: 12px Georgia, "Times New "
 }
 
@@ -82,11 +83,49 @@ textarea{
   height: 100px;
 }
 input{
-  width: 150px;
+  width: 200px;
+  height: 30px;
+  border-radius: 4px bold;
 }
 input[type="radio"], input[type="checkbox"]{
   width: auto;
 }
 input[type="submit"]{
   width: 100px;
+}
+
+label{
+  background-color: red;
+}
+
+.first_part{
+  display: inline-block;
+  background-color: black;
+  width: 600px;
+  height: 200px;
+  font-size: 16px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.second_class{
+  padding: 50px;
+ font-size: 16px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+}
+.endClass{
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+ 
+}
+
+button{
+  width: 160px;
+  height: 30px;
+  background-color: #3f51b5;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  text-align: center;
+  border: 2px solid #3f51b5;
 }

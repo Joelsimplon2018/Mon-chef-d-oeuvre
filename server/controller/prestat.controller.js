@@ -35,6 +35,7 @@ function authenticate(req, res, next) {
                 JSON.parse(JSON.stringify(prestataire)),
                 config.secret
               );
+              prestataire.isLoggedIn = true;
               res.status(200).send({ success: true, token, prestataire:prestataire });
             })
             .catch(error => next(error))

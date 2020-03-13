@@ -10,6 +10,7 @@ import{AuthService}from '../../services/auth/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import{MissionService}from '../../services/mission.service';
 import {FormControl,AbstractControl, FormGroup, Validators,FormGroupDirective,NgForm} from '@angular/forms';
+import { ModelMission } from '../../Models/model.mission';
 
 
 
@@ -22,6 +23,7 @@ import {FormControl,AbstractControl, FormGroup, Validators,FormGroupDirective,Ng
 export class MissionComponent implements OnInit {
   myForm: FormGroup;
   successMessage: String = '';
+  modelMission :ModelMission = new ModelMission();
  
   
  
@@ -43,7 +45,7 @@ export class MissionComponent implements OnInit {
    
     
   SubmiteMissionFormProp(){
-    console.log('form value',this.myForm.value);
+    
 
     //this.myForm.value =  {
     //   "titre":"photogra",
@@ -54,8 +56,8 @@ export class MissionComponent implements OnInit {
     //   "type_prestation":"mariage",
     //   }
 
-    let body = this.myForm.value;
-
+   this.modelMission = this.myForm.value;
+   console.log('form value', this.modelMission);
     // body.users_idusers = id de l'utilisateur connecté
     // body.prestataire_id = id du prestataire surlequel on a cliqué
     // Quand tu cliques sur proposer une mission, il faut passer à ce comosant (create mission) l'id du prestataire
@@ -75,7 +77,7 @@ export class MissionComponent implements OnInit {
     if (this.myForm.valid) {
 
       
-      this.MissionService.submitPropositionMission(body).subscribe(
+      this.MissionService.submitPropositionMission(this.modelMission).subscribe(
         data => (this.successMessage = "Votre proposition de mission  éteé envoyé"),
         error => (this.successMessage = "Erreur ")
       );

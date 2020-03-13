@@ -43,17 +43,17 @@ export class CreationProfileDetailComponent implements OnInit {
     private domSanitizer: DomSanitizer
   ) {
     this.myForm = new FormGroup({
-      nom: new FormControl("test name", Validators.required),
-      prenom: new FormControl("test prénom", Validators.required),
-      email: new FormControl("gui@gui.com", Validators.email),
-      password: new FormControl("123456", Validators.required),
-      ville: new FormControl("abidjan", Validators.required),
+      nom: new FormControl(null, Validators.required),
+      prenom: new FormControl(null, Validators.required),
+      email: new FormControl(null, Validators.email),
+      password: new FormControl(null, Validators.required),
+      ville: new FormControl(null, Validators.required),
       image: new FormControl(null, Validators.required),
       experience: new FormControl(null, Validators.required),
       competence: new FormControl(null, Validators.required),
-      titre: new FormControl("codeur", Validators.required),
-      tarif: new FormControl(650, Validators.required),
-      telephone: new FormControl("06990953637", Validators.required)
+      titre: new FormControl(null, Validators.required),
+      tarif: new FormControl(null, Validators.required),
+      telephone: new FormControl(null, Validators.required)
     });
   }
 

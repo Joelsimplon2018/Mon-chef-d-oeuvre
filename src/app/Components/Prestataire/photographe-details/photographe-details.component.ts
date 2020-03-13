@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 import { switchMap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import{PhotographeService}from '../../../services/photographe.service';
-
+import{AuthService}from '../../../services/auth/auth.service';
 @Component({
   selector: 'app-photographe-details',
   templateUrl: './photographe-details.component.html',

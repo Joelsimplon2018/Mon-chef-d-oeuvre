@@ -1,62 +1,49 @@
 <div class="formcontainer">
     <div class="formbody">
-        <form style="width:100%;" [formGroup]="myForm">
+        <form [formGroup]="myForm">
             <div class="header">Proposition de la mission</div>
-
-            <div>
-                    <h4>Titre de la mission</h4>
-                <mat-form-field style="width:100%;">
-                    
-                    <input type="text" formControlName="titre" matInput placeholder="titre" id="user">
-                </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Titre</mat-label>
+                <input matInput formControlName="titre"  id="user" >
                 <span *ngIf="isValid('titre')">Veuillez saisir votre le titre </span>
-            </div>
+              </mat-form-field><br>
 
-            <div>
-                    <h4>Description de la mission</h4>
-                <mat-form-field style="width:100%;">
-                   <textarea formControlName="description" cols="65" rows="5"></textarea>
-                </mat-form-field>                
-                <span *ngIf="isValid('description')">Veuillez decrire votre mission</span>
-            </div>
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" cols="65" rows="5" id="user"></textarea>
+                <span *ngIf="isValid('titre')">Veuillez décrire votre mission</span>
+              </mat-form-field><br>
 
-            <div>
-                    <h4>La date de la mission</h4>
-                <mat-form-field style="width:100%;">
-                    
-                    <input type="date" formControlName="date" matInput placeholder="date" id="user">
-                </mat-form-field>
-                <span *ngIf="isValid('date')">Veuillez saisir votre la date </span>
-            </div>
-            <div>
-                    <h4>Adresse</h4>
-                <mat-form-field style="width:100%;">
-                    
-                    <input type="text" formControlName="adresse" matInput placeholder="adresse" id="user">
-                </mat-form-field>
-                <span *ngIf="isValid('adresse')">Veuillez saisir votre adresse </span>
-            </div>
-            <div>
-                    <h4>Téléphone</h4>
-                <mat-form-field style="width:100%;">
-                    
-                    <input type="text" formControlName="telephone" matInput placeholder="telephone" id="user">
-                </mat-form-field>
-                <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de téléphone </span>
-            </div>
-           
-            <div>
-                <h4>Type de prestattion</h4>
-                <mat-form-field style="width:100%;">
-                    <input type="radio"  value="mariage" formControlName="type_prestation" name="experience"> mariage
-                    <input type="radio"  value="anniversaire"  formControlName="type_prestation" name="experience">   anniversaire
-                    <input type="radio" value="semainaire"  formControlName="type_prestation" name="type_prestation">  semainaire
-                    <input type="radio" value="autre"  formControlName="type_prestation" name="type_prestation">  autre
-                </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input type="date" formControlName="date" matInput placeholder="date" id="user">
+                <span *ngIf="isValid('titre')">Veuillez saisir la date </span>
+              </mat-form-field><br>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Adresse</mat-label>
+                <input matInput formControlName="adresse" id="user">
+                <span *ngIf="isValid('adresse')">Veuillez saisir votre adresse</span>
+              </mat-form-field><br>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Telephone</mat-label>
+                <input matInput formControlName="telephone" id="user">
+                <span *ngIf="isValid('telephone')">Veuillez saisir votre numero de telephone adresse</span>
+              </mat-form-field><br>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Type des prestations</mat-label>
+                <mat-select formControlName="type_prestation" >
+                  <mat-option value="mariage" name="type_prestation">Mariage</mat-option>
+                    <mat-option value="anniversaire" name="type_prestation">Anniversaire</mat-option>
+                      <mat-option value="seminaire" name="type_prestation">Seminaire</mat-option>
+                      <mat-option value="autre" name="type_prestation">Autre</mat-option>
+                </mat-select>
                 <span *ngIf="isValid('type_prestation')">Veiullez choisir un type</span>
-            </div>
-           
-            <div style="margin-top:20px;">
+              </mat-form-field>
+
+            <div >
                 <button  mat-raised-button color="accent" class="form-btn" (click)="SubmiteMissionFormProp()">Envoyer</button>
             </div>
 

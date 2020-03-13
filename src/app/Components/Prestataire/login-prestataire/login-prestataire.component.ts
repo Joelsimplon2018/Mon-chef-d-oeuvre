@@ -17,10 +17,12 @@ import {
   styleUrls: ['./login-prestataire.component.css']
 })
 export class LoginPrestataireComponent implements OnInit {
-
+ 
   loginForm: FormGroup;
   successMessage: String = "";
   isLoading = false;
+  isLoggedIn: boolean = false;
+
 
   constructor( private PhotographeService: PhotographeService,
     private fb: FormBuilder,
@@ -32,6 +34,13 @@ export class LoginPrestataireComponent implements OnInit {
     });
    }
 
+   logout() {
+    this.isLoggedIn = false;
+  }
+
+  onSubmit() {
+    this.isLoggedIn = true;
+  }
   ngOnInit() {
   }
 
@@ -49,6 +58,7 @@ export class LoginPrestataireComponent implements OnInit {
       );
     }
   }
+
 
   isValid(controlName) {
     return (
